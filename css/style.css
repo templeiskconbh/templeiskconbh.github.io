@@ -157,13 +157,13 @@ h2.m-0.text-primary {
 @media (max-width: 768px) {
   .header-carousel .owl-carousel-item {
     position: relative;
-    min-height: 500px;
+    min-height: 100px;
   }
 
   .header-carousel .owl-carousel-item img {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100px;
     object-fit: cover;
   }
 
@@ -184,6 +184,18 @@ h2.m-0.text-primary {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .header-carousel .owl-dots {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 10px;
+    right: 3px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .header-carousel .owl-dots .owl-dot {
   position: relative;
   width: 45px;
@@ -195,9 +207,29 @@ h2.m-0.text-primary {
   transition: 0.5s;
 }
 
+@media (max-width: 768px) {
+  .header-carousel .owl-dots .owl-dot {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    border-radius: 45px;
+    transition: 0.5s;
+  }
+}
+
 .header-carousel .owl-dots .owl-dot.active {
   width: 60px;
   height: 60px;
+}
+
+@media (max-width: 768px) {
+  .header-carousel .owl-dots .owl-dot.active {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .header-carousel .owl-dots .owl-dot img {
@@ -208,6 +240,18 @@ h2.m-0.text-primary {
   padding: 2px;
   border-radius: 45px;
   transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .header-carousel .owl-dots .owl-dot img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+    padding: 2px;
+    border-radius: 45px;
+    transition: 0.5s;
+  }
 }
 
 .page-header {
