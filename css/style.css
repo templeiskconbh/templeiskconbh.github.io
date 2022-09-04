@@ -646,6 +646,24 @@ h2.m-0.text-primary {
   font-family: samaranfont;
   word-spacing: 3px;
 }
+
+@media (max-width: 768px) {
+  .hmove {
+    display: flex;
+  }
+  .hitem {
+    flex-shrink: 0;
+    width: 200%;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 2px;
+    text-align: center;
+  }
+  .hitem {
+    font-family: samaranfont;
+    word-spacing: 3px;
+  }
+}
 /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
 /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
 @keyframes tickerh {
