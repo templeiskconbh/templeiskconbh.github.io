@@ -653,7 +653,7 @@ h2.m-0.text-primary {
   }
   .hitem {
     flex-shrink: 0;
-    width: 200%;
+    width: max-content;
     height: fit-content;
     box-sizing: border-box;
     padding: 2px;
