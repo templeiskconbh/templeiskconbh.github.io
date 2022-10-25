@@ -159,8 +159,13 @@
               <h1 class="mb-4">
                 Ask your queries and we will get back to you!
               </h1>
-
-              <form>
+              <!-- form begins  -->
+              <form
+                method="post"
+                action="https://script.google.com/macros/s/AKfycbz8xfbZ1VL8Tr8E3AYCKn-xuE-DTLyiWc5Wf4ThKv7PtGOCwKi7boSFf3vqjwrdtHYv/exec"
+                name="DevoteeContactForm"
+                id="contactform"
+              >
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -168,44 +173,52 @@
                         type="text"
                         class="form-control"
                         id="name"
+                        name="Name"
                         placeholder="Your Name"
                       />
                       <label for="name">Your Name</label>
                     </div>
                   </div>
+
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input
                         type="number"
                         class="form-control"
                         id="phone"
+                        name="Phone"
                         placeholder="Phone Number(with Code)"
                       />
                       <label for="phone">Phone number(With Code)</label>
                     </div>
                   </div>
+
                   <div class="col-12">
                     <div class="form-floating">
                       <input
                         type="email"
                         class="form-control"
                         id="email"
+                        name="Email"
                         placeholder="Your Email id"
                       />
                       <label for="email">Your Email id</label>
                     </div>
                   </div>
+
                   <div class="col-12">
                     <div class="form-floating">
                       <textarea
                         class="form-control"
                         placeholder="Leave a message here"
                         id="message"
+                        name="Message"
                         style="height: 100px"
                       ></textarea>
                       <label for="message">Message</label>
                     </div>
                   </div>
+
                   <div class="col-12">
                     <button
                       class="btn btn-primary rounded-pill py-3 px-5"
@@ -216,6 +229,7 @@
                   </div>
                 </div>
               </form>
+              <!-- form ends  -->
             </div>
           </div>
           <div class="col-lg-6 pe-lg-0" style="min-height: 400px">
@@ -235,7 +249,27 @@
       </div>
     </div>
     <!-- Contact End -->
+    <!-- script begins -->
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbz8xfbZ1VL8Tr8E3AYCKn-xuE-DTLyiWc5Wf4ThKv7PtGOCwKi7boSFf3vqjwrdtHYv/exec';
+      const form = document.forms['DevoteeContactForm'];
 
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) =>
+            alert(
+              'Hare Bol! \nYour Message is sent. We will soon contact you! \nHare Krishna!'
+            )
+          )
+          .then(() => {
+            window.location.reload();
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
+    <!-- script ends  -->
     <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn"
